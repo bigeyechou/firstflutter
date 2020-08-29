@@ -118,12 +118,13 @@ class _CustomBannerState extends State<CustomBanner> {
     if (_timer == null) {
       _timer = Timer.periodic(Duration(seconds: 3), (t) {
         _curIndex++;
+        if(_pageController.hasClients) {
         _pageController.animateToPage(
           _curIndex,
           duration: Duration(milliseconds: 300),
           curve: Curves.linear,
         );
-      });
+      }});
     }
   }
 

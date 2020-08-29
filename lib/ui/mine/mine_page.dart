@@ -33,6 +33,7 @@ class _MinePageState extends State<MinePage> {
 
   }
 
+  //搜索组件
   Widget SearchFrame() {
     return Container(
       height: 30,
@@ -62,6 +63,7 @@ class _MinePageState extends State<MinePage> {
     );
   }
 
+  //日历组件
   Widget CalendarDataBar() {
     return Container(
       margin: const EdgeInsets.only(left: 5,right: 5),
@@ -133,6 +135,8 @@ class _MinePageState extends State<MinePage> {
               onTap: () {
                 setState(() {
                   _dayIndex = index;
+                  _pageController.animateToPage(_dayIndex,
+                      duration: Duration(milliseconds: 600), curve: Curves.decelerate);
                 });
               },
             );
@@ -264,6 +268,7 @@ class _MinePageState extends State<MinePage> {
             child: SingleChildScrollView(
               child: Container(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     SearchFrame(),
                     CustomBanner(
@@ -289,7 +294,7 @@ class _MinePageState extends State<MinePage> {
                     ),
                     CalendarDataBar(),
                     Container(
-                      height: 500,
+//                      height: 500,
                       child: PageView.builder(
                         controller: _pageController,
                         itemCount: _weekData.length,
