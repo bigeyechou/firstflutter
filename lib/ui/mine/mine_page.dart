@@ -17,7 +17,7 @@ class _MinePageState extends State<MinePage> {
   final DateTime _dateTime = DateTime.now();
   final _weekData = ['一', '二', '三', '四', '五', '六', '日'];
   int _dayIndex = 0;
-  double listHeight = 0;
+  double listHeight = 500;
 
   // 用于同 TabBar 进行联动
   PageController _pageController;
