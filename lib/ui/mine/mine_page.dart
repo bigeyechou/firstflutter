@@ -17,6 +17,7 @@ class _MinePageState extends State<MinePage> {
   final DateTime _dateTime = DateTime.now();
   final _weekData = ['一', '二', '三', '四', '五', '六', '日'];
   int _dayIndex = 0;
+  double listHeight = 0;
 
   // 用于同 TabBar 进行联动
   PageController _pageController;
@@ -294,7 +295,7 @@ class _MinePageState extends State<MinePage> {
                     ),
                     CalendarDataBar(),
                     Container(
-//                      height: 500,
+                      height: listHeight,
                       child: PageView.builder(
                         controller: _pageController,
                         itemCount: _weekData.length,
@@ -305,6 +306,7 @@ class _MinePageState extends State<MinePage> {
                           // 通过 tabController 来改变 TabBar 的显示位置
                           setState(() {
                             _dayIndex = position;
+                            listHeight = 500.00+position*100;//TODO 请求下数据，根据条目数量算高度，是否有更好的方法
                           });
                         },
                       ),
