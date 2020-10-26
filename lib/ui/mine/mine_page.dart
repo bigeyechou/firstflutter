@@ -19,7 +19,7 @@ class _MinePageState extends State<MinePage> {
   int _dayIndex = 0;
   double listHeight = 500;
 
-  // 用于同 TabBar 进行联动
+  // 用于同 TabBar 进行联动,
   PageController _pageController;
 
   @override
