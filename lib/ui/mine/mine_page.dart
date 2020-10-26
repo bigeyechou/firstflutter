@@ -3,7 +3,7 @@ import 'package:firstflutter/http/http_util.dart';
 import 'package:flutter/material.dart';
 
 import '../widget_banner.dart';
-
+//zheng
 class MinePage extends StatefulWidget {
   _MinePageState createState() => _MinePageState();
 }
@@ -18,8 +18,8 @@ class _MinePageState extends State<MinePage> {
   final _weekData = ['一', '二', '三', '四', '五', '六', '日'];
   int _dayIndex = 0;
   double listHeight = 500;
+  // 用于同 TabBar 进行联动
 
-  // 用于同 TabBar 进行联动.
   PageController _pageController;
 
   @override
